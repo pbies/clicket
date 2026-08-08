@@ -6,6 +6,8 @@ Changed startup to system tray, no window on screen at startup.
 
 Used Claude AI to fix some bugs.
 
+You need Python 3 and Visual Studio (Community works).
+
 Install nvm-setup.exe from https://github.com/coreybutler/nvm-windows/releases
 
 Run in pwsh (use your version numbers):
