@@ -45,23 +45,6 @@ function createWindow(){
 
 
 
-    app.on('quit', (e)=>{
-        if(runOnStartup.checked){
-            app.setLoginItemSettings({
-                openAtLogin: true
-            })
-            
-            
-        }else{
-            app.setLoginItemSettings({
-                openAtLogin: false
-            })
-
-        }
-        store.set('startup', runOnStartup.checked);
-    })
-        
-
     var contextMenu = Menu.buildFromTemplate([
         {
             label: 'Show Clicket', click: function(){
@@ -77,16 +60,20 @@ function createWindow(){
             type: 'checkbox',
             checked:store.get('startup'),
             id:"runonstartup",
-            label: "Run on startup", click: function(){}
-            
+            label: "Run on startup", click: function(menuItem){
+                app.setLoginItemSettings({
+                    openAtLogin: menuItem.checked
+                })
+                store.set('startup', menuItem.checked);
+            }
         }
     ])
 
     appIcon.setContextMenu(contextMenu)
 
-    var runOnStartup = contextMenu.getMenuItemById('runonstartup')
-
-   
+    app.setLoginItemSettings({
+        openAtLogin: !!store.get('startup')
+    })
 
     appIcon.on('click', ()=>{
         win.show();
