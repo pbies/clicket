@@ -1,4 +1,4 @@
-# clicket
+# clicket 1.0.1
 
 	https://github.com/pbies/clicket
 
