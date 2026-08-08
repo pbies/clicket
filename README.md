@@ -6,8 +6,14 @@ Changed startup to system tray, no window on screen at startup.
 
 Used Claude AI to fix some bugs.
 
-Run in pwsh:
+Install nvm-setup.exe from https://github.com/coreybutler/nvm-windows/releases
+
+Run in pwsh (use your version numbers):
 ```
+nvm install latest
+nvm use 26.7.0
+npm install -g npm@12.0.2
+
 npm install --save-dev @electron/rebuild --ignore-scripts
 npx electron-rebuild -f -w global-mouse-events
 npm run build-installer
