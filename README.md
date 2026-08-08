@@ -6,6 +6,14 @@ Changed startup to system tray, no window on screen at startup.
 
 Used Claude AI to fix some bugs.
 
+Run in pwsh:
+```
+npm install --save-dev @electron/rebuild --ignore-scripts
+npx electron-rebuild -f -w global-mouse-events
+npm run build-installer
+```
+and run then the installer from "dist" folder.
+
 Original work:
 
 	https://github.com/spreyo/clicket
